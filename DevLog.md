@@ -1,0 +1,4 @@
+## This will be any comments, explanations, logging work completed, etc...
+
+### 2.4.2025 - 5:55pm - Kyler
+- This is an example log to showcase how we can log all our work done on this project. I started a tiny bit of documentation in our README today as well as am currently trying to set up this log. Things I want to get done today will be discussing the framework we plan to make with you guys as well as possibly using github Projects feature as its very neat and organized but would have a learning curve for all of us, therefore it could be unnecessary. ( You could just write general notes about what you did as another source of us all to be on the same page. Also acts as a timeline for us to follow... you would do this after your work is done and then push ur changes to github. )
