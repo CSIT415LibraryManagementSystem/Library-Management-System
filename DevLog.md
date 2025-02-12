@@ -5,3 +5,6 @@
 
 ### 2.7.2025 - 2:14am - Kyler
 - I set up a general directory layout to keep our code clean (We can edit it or revise it however you guys want!), I also made a home/landing page... No current body content on the page wanted to see if you guys wanted to make this a main page or just an entry point... currently did it in a html not a php file as we won't need any database connection for this page in the foreseeable future. Also set up some of the css. Tried to comment super well on everything I could! 
+
+### 2.12.2025 - 4:15 pm - Kyler
+- I set up the other pages htmls, just copy and pasted the home for the main layout each page will maintain and now the nav is set up. I also drew up some wireframes that Shaima and I are going to work off for the Ui layouts. Did some more bootstrap formating like making the nav-link titles bold... Also set up a subpage off the Login page that has a register now page set up for users that aren't registered. Probably going to set up temp jsons over doing the SQL soon and get user authentication in place as we work on the UI and maybe a little back-end too. Main worry I have right now is how to manage login states across pages I forgot how it works. Will probably do some work tonight (2.12 Wednesday) I did this last night and never pushed it.. Committing it now. 
