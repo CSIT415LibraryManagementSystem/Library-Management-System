@@ -34,7 +34,29 @@
   height: auto; 
   margin-top: 1rem;
 }
+/*------------------- Book Directory Styling ------------------- */
 
+/* This code below is for the search bar*/
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-input{
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+@media (max-width: 760px) {
+  .search-input {
+    width: 90%;
+  }
+}
 
 /*------------------- Persistent For All Pages Styling ------------------- */
 
