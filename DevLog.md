@@ -11,3 +11,6 @@
 
 ### 2.20.2025 - 2:45 pm - Steven
 - I have started to work onto the functionality of the html pages and the JavaScript necessary. I did some changes for the BookDirectory.html in order to implement a search bar and make sure the items appear as they should after the search. I have also done some changes in the style.css for the mentioned search bar, and will continue further into making sure that what is implemented and functional. Let me know if there exists any error of what is added or not necessary, and if something needs to be worked on as soon as possible.
+
+### 2.27.2025 - 1:14 pm - Nick
+- I began creating and uploaded a basic database consisting of 20 books. If we have more time for the project, we can add more books in the future. The database consists of the following: id (auto incremented), name, genre, author, published date. All there is left to do database wise is figure out a way to store jpg files so that books can appear more visibly on our website. I will continue to explore and do research in regards to this sometime this weekend. When that is finished, I'll make sure to polish the SQL file with comments so that it is easily readable as well.
