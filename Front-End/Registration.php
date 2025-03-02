@@ -1,8 +1,5 @@
 <!-- ----------------------------------------------------------------------------------------------------------------------------------
-                         This is our Book Directory(Virtual Library). It will service as a serach function for 
-                our library where uses can search by a name in a search bar(Will partially match search query to titles).
-               It will have a small checkable table that acts as filters and will remove books that do not fall within the
-            conditions. Will also be setup in a grid box and will have infinite scroll and not use pagination (Multiple pages).
+                    This is a subpage for the Login Page. This is going to be a registration page for new users.  
 ------------------------------------------------------------------------------------------------------------------------------------ -->
 <!-- <?php
     session_start();
@@ -23,7 +20,7 @@
     <!-- Navigation Bar -->
     <nav class = "navbar navbar-expand-lg navbar-red" > 
         <div class = "container-fluid">
-            <a class = "navbar-brand" href = "BookDirectory.html"></a>
+            <a class = "navbar-brand" href = "Registration.php"></a>
             <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class = "navbar-toggler-icon"></span>
@@ -31,50 +28,29 @@
 
             <div class = "collapse navbar-collapse" id = "navbarNav">
                 <ul class = "navbar-nav">
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.html">Home</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.html">Book Directory</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.html">Login</a></li>
+                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.php">Home</a></li>
+                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a></li>
+                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
- <!-- Search Bar for the directory-->
-  <div class="search-container">
-    <input type="text" id="searchBar" placeholder="Search your books" class="search-input">
-  </div>  
  <!-- Page content can go here needs a main class possibly -->
 
     <div class="image-container"> <!-- MSU Logo -->
         <img src="../Resources/MSULogoLongTransparent.jpg" alt="MSU Logo" class="MSU-image">
     </div>
 
-    
+
 
     <!-- Footer -->
     <footer class="text-white text-center py-3 footer-red">
         <p>&copy; 2025 Montclair State University. All Rights Reserved.</p>
     </footer>
+</body>
 
 
 <!-- Bootstrap Bundle with Popper (for interactive components) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- JavaScript for the search bar -->
-  <script>
-    document.getElementById('searchBar').addeventListener('input', function() {
-      let query = this.value.toLowerCase();
-      let books = document.querySelectorAll('.book-item');
-      books.forEach(function(book) {
-        let title = book.querySelector('.book-title').textContent.toLowerCase();
-        if (title.includes(query)) {
-          book.style.display = 'block';
-        }
-        else {
-          book.style.display = 'none';
-        });
-      });
-  </script>
-
-</body>
 </html>

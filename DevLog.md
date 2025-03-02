@@ -14,3 +14,25 @@
 
 ### 2.27.2025 - 1:14 pm - Nick
 - I began creating and uploaded a basic database consisting of 20 books. If we have more time for the project, we can add more books in the future. The database consists of the following: id (auto incremented), name, genre, author, published date. All there is left to do database wise is figure out a way to store jpg files so that books can appear more visibly on our website. I will continue to explore and do research in regards to this sometime this weekend. When that is finished, I'll make sure to polish the SQL file with comments so that it is easily readable as well.
+
+### 3.2.2025 - 2:05 pm - Shaima and Kyler #1 
+- We're finsihed the UI and Kyler is starting the Back-end with it, going to look through the sql file so we understand it better and how we will connect it. 
+
+- Changes we added as we go or New Implements:
+    - Fixed a small typo in the eventlisterner for the Book Directory search query (addeventListener -> addEventListener)... 
+    - As well as in the <script> changed the If/Else block statement to an inLine style for if else...
+          - (Its just a shortcut that basically does -> condition ? Do_This_if_Expression_is_True : Do_this_if_expression_is_false; -> title.includes(query) ? 'block' : 'none') so if the title is included in the query it will display the data in the block format and if it is not its null or 'none' in this example so nothing displayed...
+    - Changed the htmls to php to start gettign ready to connect to the database..
+    - Set up a php file that hold the connection code to the BookDB (books.sql) database for easy connections.
+    - Set up the carousel with php to populate the carousel-items with the data ... we just need to link imgs whcih i explained easily how to connect them in the Home.php on line 61
+          - I also spent about 3 hours getting this to work because the active slide wasn't setting properly b/c I populated it said carousel-itemactive instead of carousel-item active .... (didn't concate the space in correctly... )
+    - Currently I also clearly have this working through connecting this through MariaDB in XAMPP, here is hwo for the groupmates who have not used XAMPP:
+            - Download XAMPP from internet (if do not already have it)
+            - Once Installed and ready open XAMPP and start Apache and MySQL (all the default settings should be fine)
+            - Carry the Whole repository into htdocs in XAMPP -> You can search ur files with XAMPP on ur computer and XAMPP_home or something like that should bring you to the right directory..
+            - Put the whole project in httdocs if on windows... I think it may be different for MacOS .. .just chatgbt it or look at documentation should be easy to figure out...
+            - open -> http://localhost/phpmyadmin/ 
+            - Go to export and export the BookDB database in the phpmyadmin dashboard and leave all the settings the same
+            - now open the project -> http://localhost/Library-Management-System/Front-End/Home.php and it should be working as a WebServer with the Database connected !!! 
+      - Going to push this code now and start working on the rest of the To-Do list with Shaima! (6:13pm)
+

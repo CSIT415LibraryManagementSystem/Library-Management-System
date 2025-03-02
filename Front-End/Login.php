@@ -20,7 +20,7 @@
     <!-- Navigation Bar -->
     <nav class = "navbar navbar-expand-lg navbar-red" > 
         <div class = "container-fluid">
-            <a class = "navbar-brand" href = "Login.html"></a>
+            <a class = "navbar-brand" href = "Login.php"></a>
             <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class = "navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
 
             <div class = "collapse navbar-collapse" id = "navbarNav">
                 <ul class = "navbar-nav d-flex w-100">
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.html">Home</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.html">Book Directory</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.html">Login</a></li>
-                    <li class = "nav-item ms-auto"><a class = "nav-link fw-bold" href = "Registration.html">Register Now</a></li>
+                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.php">Home</a></li>
+                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a></li>
+                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
+                    <li class = "nav-item ms-auto"><a class = "nav-link fw-bold" href = "Registration.php">Register Now</a></li>
                 </ul>
             </div>
         </div>

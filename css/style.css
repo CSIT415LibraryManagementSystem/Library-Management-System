@@ -5,7 +5,7 @@
 
 /*------------------- Home Page Styling ------------------- */
 
-.navbar.navbar-red /* Custom css to make the navbar red and text white (Currently no text) */
+.navbar-red /* Custom css to make the navbar red and text white (Currently no text) */
 {
   background-color: #990000;
   color: #ffffff;
@@ -20,7 +20,11 @@
 .footer-red /* Styling for the footer to match the nav. */
 {
   background-color: #990000;
-  color:#ffffff /* The inline text-white attribute in the footer might be over-writing the color: #ffffff (white) but it can stay like this for now. */
+  color:#ffffff; /* The inline text-white attribute in the footer might be over-writing the color: #ffffff (white) but it can stay like this for now. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .image-container {
