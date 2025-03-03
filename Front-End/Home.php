@@ -44,6 +44,18 @@
         <img src="../Resources/MSULogoLongTransparent.jpg" alt="MSU Logo" class="MSU-image">
     </div>
 
+    <!-- Library Welcome Section-->
+    <div class="container mt-4 welcome-bubble">
+        <div class="text-center">
+            <h2>📖 Welcome to Montclair Library!</h2>
+            <p class="lead">
+                Explore a vast collection of books, research materials, and digital resources. 
+                Borrow books, track your reading history, and discover staff recommendations.
+            </p>
+        </div>
+    </div>
+
+
     <!-- Staff Picks Carousel -->
     <div class = "container mt-4">
         <h2 class = "text-center"> Staff Picks </h2> <!--Header for Carousel--> 
@@ -87,6 +99,52 @@
                 <span class = "visually-hidden">Next</span>
             </button>
         </div>
+    </div>
+
+    <!-- User Dashboard Section -->
+    <div class = "container mt-4">
+        <div class = "card shadow-sm p-3 card-outer">
+            <h3 class = "text-center mb-3"> User Dashboard</h3>
+            <div class = "row">
+                
+                <!-- Borrowed Books Section -->
+                <div class = "col-md-4">
+                    <div class = "card bg-light mb-3">
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Books Borrowed</h5>
+                            <p class = "card-text"><strong>0</strong> books currently borrowed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Due Books Section -->
+                <div class = "col-md-4">
+                    <div class = "card bg-light mb-3">
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Books Due Soon</h5>
+                            <p class = "card-text"><strong>0</strong> books due within the next week.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Status Section -->
+                <div class = "col-md-4">
+                    <div class = "card bg-light mb-3">
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Account Status</h5>
+                            <p class = "card-text">No overdue books. You're all set! ✅</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Outside of Nav To BookDirectory.php -->
+    <div class = "text-center mt-4">
+        <a href = "BookDirectory.php" class = "btn btn-primary btn-lg btn-red">
+            Browse Library
+        </a>
     </div>
 
 

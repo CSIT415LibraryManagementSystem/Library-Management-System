@@ -13,8 +13,15 @@
 
 .navbar-nav .nav-link /* Text style for the navbar links (buttons text) to be white and bright -> Matches footer */
 {
-  color: #ffffff !important; 
-  opacity: 1 !important;  
+  color: #ffffff; 
+  opacity: 1;  
+}
+
+.nav-link:hover
+{
+  color:black !important;
+  font-weight: bolder !important;
+  transition: 0.3s;
 }
 
 .footer-red /* Styling for the footer to match the nav. */
@@ -27,13 +34,53 @@
   
 }
 
-.image-container {
+.welcome-bubble
+{
+  background-color: #990000;
+  color: #ffffff;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  height: 200px;
+  padding-top: 50px;;  
+}
+
+/* Dashboard CSS Section */
+
+.card-outer
+{
+  background-color: #990000;
+  color: #ffffff;box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+
+}
+
+.card-body
+{
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.btn-red
+{
+  background-color: #990000;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.image-container 
+{
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
 }
 
-.MSU-image {
+.MSU-image 
+{
   max-width: 400px; /* We can adjust the size here */
   height: auto; 
   margin-top: 1rem;
@@ -41,13 +88,15 @@
 /*------------------- Book Directory Styling ------------------- */
 
 /* This code below is for the search bar*/
-.search-container {
+.search-container 
+{
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
-.search-input{
+.search-input
+{
   width: 100%;
   max-width: 600px;
   padding: 10px;
@@ -56,7 +105,8 @@
   font-size: 16px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 760px) 
+{
   .search-input {
     width: 90%;
   }

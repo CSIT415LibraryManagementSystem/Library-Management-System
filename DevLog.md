@@ -36,3 +36,9 @@
             - now open the project -> http://localhost/Library-Management-System/Front-End/Home.php and it should be working as a WebServer with the Database connected !!! 
       - Going to push this code now and start working on the rest of the To-Do list with Shaima! (6:13pm)
 
+### 3.2.2025 - 9:58 pm - Shaima and Kyler
+- Setup the Home.php <--- Mostly finished
+- Features to be added to Home.php
+      - Populate the dashboard with user data when the userDB is set up..
+      - Make functionality for Admins like user management on Home.php if a User has credentials
+      - Possibly make the Staff Picks be able to be set if a user has admin credentials <- Currently it just selects 4 random books from the BookDB

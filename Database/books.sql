@@ -32,34 +32,35 @@ CREATE TABLE `books` (
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   `published` int(11) DEFAULT NULL,
-  `genre` varchar(255) NOT NULL
+  `genre` varchar(255) NOT NULL,
+  `image_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `title`, `author`, `published`, `genre`) VALUES
-(1, 'And Then There Were None', 'Agatha Christie', 1939, 'Mystery'),
-(2, 'The Alchemist', 'Paulo Coelho', 1988, 'Fantasy'),
-(3, 'The Hobbit', 'J.R.R Tolkien', 1937, 'Fantasy'),
-(4, 'A Tale of Two Cities', 'Charles Dickens', 1859, 'Fiction'),
-(5, 'The Great Gatsby', 'F. Scott Fitzgerald', 1925, 'Tragedy'),
-(6, 'The Hunger Games', 'Suzanne Collins', 2008, 'Fiction'),
-(7, 'The Godfather', 'Mario Puzo', 1969, 'Crime'),
-(8, 'The Giver', 'Lois Lowry', 1993, 'Fiction'),
-(9, 'Harry Porter and the Philosopher\'s Stone', 'J.K. Rowling', 1997, 'Fantasy'),
-(10, 'The Da Vinci Code', 'Dan Brown', 2003, 'Mystery'),
-(11, 'The Catcher in the Rye', 'J.D. Salinger', 1951, 'Coming-of-age'),
-(12, 'Charlotte\'s Web', 'E. B. White', 1952, 'Fiction'),
-(13, 'Gone with the Wind', 'Margaret Mitchell', 1936, 'Fiction'),
-(14, 'Harry Porter and the Chamber of Secrets', 'J.K. Rowling', 1998, 'Fantasy'),
-(15, 'The Exorcist', 'William Peter Blatty', 1971, 'Horror'),
-(16, 'Jaws', 'Peter Benchley', 1974, 'Thriller'),
-(17, 'Charlie and the Chocolate Factory', 'Roald Dahl', 1964, 'Fantasy'),
-(18, 'The Bridges of Madison Country', 'Robert James Waller', 1992, 'Romance'),
-(19, 'The Little Prince', 'Antoine de Saint Exupery', 1943, 'Fantasy'),
-(20, 'Alice\'s Adventure in Wonderland', 'Lewis Carroll', 1865, 'Fantasy');
+INSERT INTO `books` (`id`, `title`, `author`, `published`, `genre`, `image_url`) VALUES
+(1, 'And Then There Were None', 'Agatha Christie', 1939, 'Mystery.png', '../Resources/BookCovers/AndThenThereWereNone.jpg'),
+(2, 'The Alchemist', 'Paulo Coelho', 1988, 'Fantasy', '../Resources/BookCovers/TheAlchemist.jpg'),
+(3, 'The Hobbit', 'J.R.R Tolkien', 1937, 'Fantasy', '../Resources/BookCovers/TheHobbit.jpg'),
+(4, 'A Tale of Two Cities', 'Charles Dickens', 1859, 'Fiction', '../Resources/BookCovers/aTaleOfTwoCities.jpeg'),
+(5, 'The Great Gatsby', 'F. Scott Fitzgerald', 1925, 'Tragedy', '../Resources/BookCovers/TheGreatGatsby.jpg'),
+(6, 'The Hunger Games', 'Suzanne Collins', 2008, 'Fiction', '../Resources/BookCovers/TheHungerGames.jpg'),
+(7, 'The Godfather', 'Mario Puzo', 1969, 'Crime', '../Resources/BookCovers/TheGodfather.jpg'),
+(8, 'The Giver', 'Lois Lowry', 1993, 'Fiction', '../Resources/BookCovers/TheGiver.jpg'),
+(9, 'Harry Porter and the Philosopher\'s Stone', 'J.K. Rowling', 1997, 'Fantasy', '../Resources/BookCovers/HarryPorterAndThePS.jpg'),
+(10, 'The Da Vinci Code', 'Dan Brown', 2003, 'Mystery', '../Resources/BookCovers/TheDaVinciCode.jpg'),
+(11, 'The Catcher in the Rye', 'J.D. Salinger', 1951, 'Coming-of-age', '../Resources/BookCovers/TheCatcherInTheRye.jpg'),
+(12, 'Charlotte\'s Web', 'E. B. White', 1952, 'Fiction', '../Resources/BookCovers/CharlottesWeb.jpg'),
+(13, 'Gone with the Wind', 'Margaret Mitchell', 1936, 'Fiction', 'GoneWithTheWind.jpg'),
+(14, 'Harry Porter and the Chamber of Secrets', 'J.K. Rowling', 1998, 'Fantasy', '../Resources/BookCovers/HarryPoterAndTheCoS.jpg'),
+(15, 'The Exorcist', 'William Peter Blatty', 1971, 'Horror', '../Resources/BookCovers/TheExorcist.jpg'),
+(16, 'Jaws', 'Peter Benchley', 1974, 'Thriller', '../Resources/BookCovers/Jaws.jpg'),
+(17, 'Charlie and the Chocolate Factory', 'Roald Dahl', 1964, 'Fantasy', '../Resources/BookCovers/CharlieAndTheCF.jpg'),
+(18, 'The Bridges of Madison Country', 'Robert James Waller', 1992, 'Romance', '../Resources/BookCovers/TheBridgesOfMC.jpg'),
+(19, 'The Little Prince', 'Antoine de Saint Exupery', 1943, 'Fantasy', '../Resources/BookCovers/TheLittlePrince.jpg'),
+(20, 'Alice\'s Adventure in Wonderland', 'Lewis Carroll', 1865, 'Fantasy', '../Resources/BookCovers/AlicesAdventureInW.jpg');
 
 --
 -- Indexes for dumped tables
