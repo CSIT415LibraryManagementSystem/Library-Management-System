@@ -36,13 +36,13 @@
             - now open the project -> http://localhost/Library-Management-System/Front-End/Home.php and it should be working as a WebServer with the Database connected !!! 
       - Going to push this code now and start working on the rest of the To-Do list with Shaima! (6:13pm)
 
-### 3.2.2025 - 9:58 pm - Shaima and Kyler
+### 3.2.2025 - 9:58 pm - Shaima and Kyler #2
 - Setup the Home.php <--- Mostly finished
 - Features to be added to Home.php
       - Populate the dashboard with user data when the userDB is set up..
       - Make functionality for Admins like user management on Home.php if a User has credentials
       - Possibly make the Staff Picks be able to be set if a user has admin credentials <- Currently it just selects 4 random books from the BookDB
 
-### 3.2.2025 - 10:58pm - Kyler
+### 3.2.2025 - 10:58pm - Kyler #3
 - Setup the Bookdirectory 3-block grid where php fills all the books and their info into a infite scroll on BookDirectory.php
 - Setup the search bar query and edited the js search from objects to php search function that $_GET to search the vault by author, title, or genre.. so a filter bar is no longer useful.. I think we need to add books.. thinking about making a script to populate the database to save time in the future.. would only need to get the jpgs then.. Think I am done for today. 
