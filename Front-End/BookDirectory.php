@@ -4,9 +4,28 @@
                It will have a small checkable table that acts as filters and will remove books that do not fall within the
             conditions. Will also be setup in a grid box and will have infinite scroll and not use pagination (Multiple pages).
 ------------------------------------------------------------------------------------------------------------------------------------ -->
-<!-- <?php
+<?php
     session_start();
-?> --> 
+    include '../Core/db_connect.php'; 
+
+    // Fetch all books from the database
+    $sql = "SELECT * FROM books ORDER BY title ASC";
+    $result = $conn->query($sql);
+
+    // Start with the default query
+    $sql = "SELECT * FROM books WHERE 1=1";
+
+    // Check if there's a search query for Books
+    if (!empty($_GET['search'])) 
+    {
+        // The search matches book titles, authors, and genres
+        $search = $conn->real_escape_string($_GET['search']);
+        $sql .= " AND (title LIKE '%$search%' OR author LIKE '%$search%' OR genre LIKE '%$search%')";
+    }
+    
+    $sql .= " ORDER BY title ASC"; // Always order Books alphabetically by title
+    $result = $conn->query($sql);
+?> 
 
 <!DOCTYPE html>
 <html lang = "en">
@@ -14,8 +33,8 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <title>Montclair Library System - Home</title>
-    <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel = "stylesheet"> <!-- Bootstap -->
+    <title>Montclair Library System - BookDirectory</title>
+    <link href = "../css/bootstrap_css/bootstrap.min.css" rel = "stylesheet"> <!-- Bootstrap -> Loaded Locally (Was having blocking issues)-->
     <link rel = "stylesheet" href = "../css/style.css"> <!-- custom Css link -->
 </head>
 
@@ -42,15 +61,43 @@
  
  <!-- Page content can go here needs a main class possibly -->
 
-    <div class="image-container"> <!-- MSU Logo -->
-        <img src="../Resources/MSULogoLongTransparent.jpg" alt="MSU Logo" class="MSU-image">
+    <div class = "image-container"> <!-- MSU Logo -->
+        <img src = "../Resources/MSULogoLongTransparent.jpg" alt = "MSU Logo" class = "MSU-image">
     </div>
 
     <!-- Search Bar for the directory-->
-    <div class="search-container">
-      <input type="text" id="searchBar" placeholder="Search your books" class="search-input">
+    <div class = "container mt-3">
+        <form method = "GET" action = "BookDirectory.php" class = "d-flex justify-content-center">
+            <input type = "text" name = "search" class = "form-control me-2" placeholder = "Search for a Book..." style = "max-width: 400px;"
+                value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+            <button type = "submit" class = "btn btn-red">Search</button>
+        </form>
     </div>  
 
+    <!-- Book Directory Layout -->
+    <div class = "container mt-4">
+        <h2 class = "text-center">📚 Book Directory</h2>
+        <div class = "row">
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <div class = "col-md-4 mb-4">
+                    <div class = "card shadow-sm">
+                        <img src = "<?= !empty($row['image_url']) ? $row['image_url'] : '../Resources/SchoolShieldThingTransparent.png'; ?>" 
+                            class = "card-img-top" 
+                            alt = "Book Cover" 
+                            style = "max-height: 250px; object-fit: cover;">
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title"><?= htmlspecialchars($row['title']); ?></h5>
+                            <p class = "card-text"><strong>Author:</strong> <?= htmlspecialchars($row['author']); ?></p>
+                            <p class = "card-text"><strong>Genre:</strong> <?= htmlspecialchars($row['genre']); ?></p>
+                            <p class = "card-text"><strong>Published:</strong> <?= $row['published']; ?></p>
+                            <!-- Btn for future Dynamically loaded Book detail pages... -->
+                            <a href = "BookDetails.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    </div>
     
 
     <!-- Footer -->
@@ -61,22 +108,6 @@
 
 <!-- Bootstrap Bundle with Popper (for interactive components) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- JavaScript for the search bar -->
-  <script>
-    document.getElementById('searchBar').addEventListener('input', function() 
-    {
-      let query = this.value.toLowerCase();
-      let books = document.querySelectorAll('.book-item');
-
-      books.forEach(function(book) 
-      {
-        let title = book.querySelector('.book-title').textContent.toLowerCase();
-        books.style.display = title.includes(query) ? 'block' : 'none'; //Simplified the if/else statement to a to a inline if/else for better readability
-        });
-      });
-    
-  </script>
 
 </body>
 </html>

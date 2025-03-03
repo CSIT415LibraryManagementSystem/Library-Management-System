@@ -42,3 +42,7 @@
       - Populate the dashboard with user data when the userDB is set up..
       - Make functionality for Admins like user management on Home.php if a User has credentials
       - Possibly make the Staff Picks be able to be set if a user has admin credentials <- Currently it just selects 4 random books from the BookDB
+
+### 3.2.2025 - 10:58pm - Kyler
+- Setup the Bookdirectory 3-block grid where php fills all the books and their info into a infite scroll on BookDirectory.php
+- Setup the search bar query and edited the js search from objects to php search function that $_GET to search the vault by author, title, or genre.. so a filter bar is no longer useful.. I think we need to add books.. thinking about making a script to populate the database to save time in the future.. would only need to get the jpgs then.. Think I am done for today. 
