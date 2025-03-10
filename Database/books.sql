@@ -41,7 +41,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author`, `published`, `genre`, `image_url`) VALUES
-(1, 'And Then There Were None', 'Agatha Christie', 1939, 'Mystery.png', '../Resources/BookCovers/AndThenThereWereNone.jpg'),
+(1, 'And Then There Were None', 'Agatha Christie', 1939, 'Mystery', '../Resources/BookCovers/AndThenThereWereNone.jpg'),
 (2, 'The Alchemist', 'Paulo Coelho', 1988, 'Fantasy', '../Resources/BookCovers/TheAlchemist.jpg'),
 (3, 'The Hobbit', 'J.R.R Tolkien', 1937, 'Fantasy', '../Resources/BookCovers/TheHobbit.jpg'),
 (4, 'A Tale of Two Cities', 'Charles Dickens', 1859, 'Fiction', '../Resources/BookCovers/aTaleOfTwoCities.jpeg'),
