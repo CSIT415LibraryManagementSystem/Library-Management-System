@@ -46,3 +46,15 @@
 ### 3.2.2025 - 10:58pm - Kyler #3
 - Setup the Bookdirectory 3-block grid where php fills all the books and their info into a infite scroll on BookDirectory.php
 - Setup the search bar query and edited the js search from objects to php search function that $_GET to search the vault by author, title, or genre.. so a filter bar is no longer useful.. I think we need to add books.. thinking about making a script to populate the database to save time in the future.. would only need to get the jpgs then.. Think I am done for today. 
+
+### 3.19.2025 - 2:14pm - Kyler
+- I wrote the script (BookDetails.php) that loads in BookDB data and populates UI for the page. It is dynamically based of the 'id' of the book so it works for all books. Has essential error checking to deal with incorrectly returned 'id' attributes for the entity it pulls from. 
+- Things we need to focus on next:
+      - UserDB *****
+      - Admin and User logins and auth
+      - AdminDashboard (Make a whole seperate page?)
+      - Populate the User Dashboard on the Home.php with User data
+      - Scripts for checkouts and managing user data
+      - Admin BackEnd Scripts to give them functionality over User and Book Management
+      - Add a Btn to the BookDetails Data for a User to checkout that book (As well as the BackEnd Script to accomapny the UI)
+      - That's all that comes to my mind right now to be accomplished.. ^^ (Once the UserDB is in place we can get the rest done decently quick)

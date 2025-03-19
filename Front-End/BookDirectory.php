@@ -91,7 +91,7 @@
                             <p class = "card-text"><strong>Genre:</strong> <?= htmlspecialchars($row['genre']); ?></p>
                             <p class = "card-text"><strong>Published:</strong> <?= $row['published']; ?></p>
                             <!-- Btn for future Dynamically loaded Book detail pages... -->
-                            <a href = "BookDetails.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="BookDetails.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">View Book Details</a>
                         </div>
                     </div>
                 </div>
