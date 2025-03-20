@@ -73,6 +73,7 @@ if (!$book)
                 <p><strong>Author:</strong> <?= htmlspecialchars($book['author']); ?></p>
                 <p><strong>Genre:</strong> <?= htmlspecialchars($book['genre']); ?></p>
                 <p><strong>Published:</strong> <?= htmlspecialchars($book['published']); ?></p>
+                <p><strong>Synopsis:</strong> <?= htmlspecialchars($book['Synopsis']); ?></p>
                 <!-- ADD A BTN HERE THAT ALLOWS CHECKOUT FOR USER -->
                 <a href = "BookDirectory.php" class = "btn btn-secondary mt-3">Return to Directory</a>
 
