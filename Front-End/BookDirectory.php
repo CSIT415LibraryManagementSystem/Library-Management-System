@@ -84,7 +84,7 @@
                         <img src = "<?= !empty($row['image_url']) ? $row['image_url'] : '../Resources/SchoolShieldThingTransparent.png'; ?>" 
                             class = "card-img-top" 
                             alt = "Book Cover" 
-                            style = "max-height: 250px; object-fit: cover;">
+                            style = "max-height: 250px; object-fit: contain; background-color: black;">
                         <div class = "card-body text-center">
                             <h5 class = "card-title"><?= htmlspecialchars($row['title']); ?></h5>
                             <p class = "card-text"><strong>Author:</strong> <?= htmlspecialchars($row['author']); ?></p>
