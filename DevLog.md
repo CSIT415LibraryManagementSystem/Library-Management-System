@@ -58,3 +58,6 @@
       - Admin BackEnd Scripts to give them functionality over User and Book Management
       - Add a Btn to the BookDetails Data for a User to checkout that book (As well as the BackEnd Script to accomapny the UI)
       - That's all that comes to my mind right now to be accomplished.. ^^ (Once the UserDB is in place we can get the rest done decently quick)
+
+### 3.20.2025 - 2:00pm - Steven
+-I added a new table for the book database, in which the synopsis is added. The idea is to fill up more the book details page. This is in regard so the user can have more of a better experience, so to know what the book is about in case they are not familiar with it. As well as adding this change to the php page so it displays the mentioned synopsis, I resized the book covers as it was something mentioned in the Milestone 1 conversation, since the past version would cut off the cover and therefore not display it properly. The change was from an "object-fit: cover" to "object-fit: contain", and added a black background for the blank space surrounding said cover. I am not sure if it is the best way to display it, but if there is any way to make it look better I'll be sure to implement it.
