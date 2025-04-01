@@ -7,7 +7,7 @@ $host = "localhost"; // Connection for XAMPP and MySQL running locally
 $username = "root"; // Default user
 $password = ""; //Default pass is empty for XAMPP
 $dbname = "bookDB"; // Our Book Database name
-$dbname = "usersDB"; //Our User Database name
+$dbname1 = "usersDB"; //Our User Database name
 
 //Connect to the database
 $conn = new mysqli($host, $username, $password, $dbname);
