@@ -76,4 +76,7 @@
       - The Admin Dashboard view and functionality (This is probably our biggest hurdle tbh the rest should go quick when I get past this 379 test on Monday I'll finish a lot up.)
       - We still need to do the merge for the User Dashboard on the homepage.. This might be a little difficult because we probably need to add a Checkout table and connect it to users Profiles Table and Books Table.
       - Still need the btn for Book checkout on the BookDetails page... Look up for more info...
-      - I think that is generally the larger changes we need to add. 
+      - I think that is generally the larger changes we need to add.
+### 03.03.2025 - 12:45pm - Nick
+
+I decided to create an employees table for our website. There needs to be some more adjusting that I will do at some point next week. This includes the incorporation of log in info which is something I need to research. I also inserted a few sample employees as well to give everyone an idea of how the employees structure will look. This whole database is subject to change, I just wanted to give everyone a general basis of what it is and should look like. As I previously said, I will work on the rest next week once Kyler completes the login / registration portion so that the database can properly connect. 
