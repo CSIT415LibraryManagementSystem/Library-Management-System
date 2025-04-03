@@ -3,6 +3,8 @@
 ------------------------------------------------------------------------------------------------------------------------------------ -->
 <!-- <?php
     session_start();
+    include '../Core/db_connect.php'; // Connects to lmsDB
+
 ?> --> 
 
 <!DOCTYPE html>
@@ -31,7 +33,7 @@
                     <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.php">Home</a></li>
                     <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a></li>
                     <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
-                    <li class = "nav-item ms-auto"><a class = "nav-link fw-bold" href = "Registration.php">Register Now</a></li>
+                    <li class = "nav-item ms-auto"><a class = "nav-link fw-bold" href = "RegistrationPage.php">Register Now</a></li>
                 </ul>
             </div>
         </div>

@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE profiles (
-  id int(11) PRIMARY KEY NOT NULL,
+  id int(11) AUTO_INCREMENT PRIMARY KEY,
   username varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
   email varchar(255) NOT NULL
