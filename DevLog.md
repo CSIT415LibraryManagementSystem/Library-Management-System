@@ -65,7 +65,7 @@
 ### 3.30.2025 - 10:00pm - Nick
 - I created multiple files for the signing in / registration portion of our project. I first created the profiles table in SQL, to store any inputted data from our website. It has a name, email, password, and id as a primary key. After finishing that, I began working on some php files to create functionality between the database and our website. I slightly changed the db_connect.php file which added our second database. Following that, I created four php files as a general basis. register.php handles when a user is creating a new account for the first time. login.php will search our current database for the email and password inputted. logout.php is a small, brief code that logs a given user out. Lastly, the dashboard.php deals with all cookies involved with the process of logging in. I will try and polish more of the program tomorrow if I have time with Kyler.
 
-### 03.02.2025 - 11:47pm - Kyler #1 
+### 04.02.2025 - 11:47pm - Kyler #1 
 - I reviewed some of the php files Nick made. (They were great @Nick ! ). I merged the register.php into the registrationPage.php. I set up the Form and the php code using POST to get the credentials and add a user to the database. I modified the PHP code with establishing the connection and adding a new user into the database to use a if/else statement to run a check to see if users had already been registered (Works off of Email). I modifed the db_connect.php to run off a single database with tables for books (Same as before) and now also includes (Profiles which is for users (Again thank u Nick). So The only change is we have one database instead of 2 so later on we can have data communicate across the database). And just some other small minor changes and implements that I cannot rememeber. SO now when u guys pull the codebase next time just make sure you either add the profiles table (users.sql) into the current database you have with PhpMyAdmin or make a new one and add them both. (Only if you care that your current DB b/c it is proabably named BookDB or something, doesn't matter from a functional standpoint if you just add the new table into the current DB.)
      
       - The registration Page is fully functional now, go check it out! Also the only thing I need to change about it is better error messages and success messages. maybe successful registration redirects you to the home page ? IDK not sure yet... Defintely the error messages needs to be like a pop up card or something, its currently just text at the top of the screen.
@@ -77,6 +77,19 @@
       - We still need to do the merge for the User Dashboard on the homepage.. This might be a little difficult because we probably need to add a Checkout table and connect it to users Profiles Table and Books Table.
       - Still need the btn for Book checkout on the BookDetails page... Look up for more info...
       - I think that is generally the larger changes we need to add.
-### 03.03.2025 - 12:45pm - Nick
+
+### 04.03.2025 - 12:45pm - Nick
 
 - I decided to create an employees table for our website. There needs to be some more adjusting that I will do at some point next week. This includes the incorporation of log in info which is something I need to research. I also inserted a few sample employees as well to give everyone an idea of how the employees structure will look. This whole database is subject to change, I just wanted to give everyone a general basis of what it is and should look like. As I previously said, I will work on the rest next week once Kyler completes the login / registration portion so that the database can properly connect. 
+
+### 04.16.2025 - 5:08 pm - Kyler
+- I implemented a few minor things and polished some errors I had noticed with alert messages and such.
+- So I finished the Login.php, the logout.php, and the session handling persistance across pages. So now Registration -> Login -> Logout are all fully complete.
+- Things we need to implement still :
+      - Admin View -> Just a new page that populates with data from the DBs and sets up admin credentials, etc..
+      - I need to populate the user dashboard with the user's data (Checkouts, Returns due, etc...) (SHOULDN'T BE HARD)
+      - Add a checkout button to the BookDetails page and the php to go with it.
+      - Make a Checkout Table that is associated with a user through a PK to FK
+      - Make a return button or have books auto return when they are overdue (Simulate returns?)
+      - That should be about everything we have to do in total! 
+      

@@ -29,10 +29,24 @@
             </button>
 
             <div class = "collapse navbar-collapse" id = "navbarNav">
-                <ul class = "navbar-nav">
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.php">Home</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
+                <ul class = "navbar-nav w-100 d-flex align-items-center">
+                    <li class = "nav-item">
+                        <a class = "nav-link fw-bold" href = "Home.php">Home</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a>
+                    </li>
+                    
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <li class = "nav-item ms-auto">
+                            <span class = "nav-link fw-bold">Hello, <?php echo htmlspecialchars($_SESSION['user']); ?></span>
+                        </li>
+                        <li class = "nav-item">
+                            <a class = "nav-link fw-bold" href = "Logout.php">Logout</a>
+                        </li>
+                    <?php else: ?>
+                        <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
+                    <?php endif; ?>        
                 </ul>
             </div>
         </div>
@@ -101,10 +115,11 @@
         </div>
     </div>
 
+    <?php if (isset($_SESSION['user'])): ?>
     <!-- User Dashboard Section -->
     <div class = "container mt-4">
         <div class = "card shadow-sm p-3 card-outer">
-            <h3 class = "text-center mb-3"> User Dashboard</h3>
+            <h3 class = "text-center mb-3">Welcome back, <?php echo htmlspecialchars($_SESSION['user']); ?>!</h3>
             <div class = "row">
                 
                 <!-- Borrowed Books Section -->
@@ -139,6 +154,7 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
 
     <!-- Button Outside of Nav To BookDirectory.php -->
     <div class = "text-center mt-4">

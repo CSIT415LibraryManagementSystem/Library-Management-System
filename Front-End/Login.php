@@ -1,11 +1,42 @@
 <!-- ----------------------------------------------------------------------------------------------------------------------------------
                  This is our Login page. It will handle user authentication and connect users to their accounts. 
 ------------------------------------------------------------------------------------------------------------------------------------ -->
-<!-- <?php
+<?php
     session_start();
-    include '../Core/db_connect.php'; // Connects to lmsDB
+    include '../Core/db_connect.php';
 
-?> --> 
+    $error = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM profiles WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($row = $result->fetch_assoc()) 
+        {
+            if (password_verify($password, $row['password'])) 
+            {
+                $_SESSION['user'] = $row['username'];
+                header("Location: Home.php");
+                exit();
+            } else 
+            {
+                $error = "Invalid password.";
+            }
+        } else 
+        {
+            $error = "No account found with this email, Please Register in the top right.";
+        }
+
+        $stmt->close();
+    }
+?>
 
 <!DOCTYPE html>
 <html lang = "en">
@@ -39,21 +70,41 @@
         </div>
     </nav>
 
- <!-- Page content can go here needs a main class possibly -->
+    <!-- Page content can go here needs a main class possibly -->
 
     <div class="image-container"> <!-- MSU Logo -->
         <img src="../Resources/MSULogoLongTransparent.jpg" alt="MSU Logo" class="MSU-image">
     </div>
 
+    <!-- Login Form -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Login</h2>
 
+        <?php if ($error): ?>
+            <div class="alert alert-danger text-center"><?php echo $error; ?></div>
+        <?php endif; ?>
+
+        <form method="POST" class="mx-auto" style="max-width: 500px;">
+            <div class="mb-4">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="example@email.com" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 btn-red">Login</button>
+        </form>
+    </div>
 
     <!-- Footer -->
     <footer class="text-white text-center py-3 footer-red">
         <p>&copy; 2025 Montclair State University. All Rights Reserved.</p>
     </footer>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-
-<!-- Bootstrap Bundle with Popper (for interactive components) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>

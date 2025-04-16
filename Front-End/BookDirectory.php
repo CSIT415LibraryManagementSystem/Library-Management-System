@@ -42,22 +42,35 @@
     <!-- Navigation Bar -->
     <nav class = "navbar navbar-expand-lg navbar-red" > 
         <div class = "container-fluid">
-            <a class = "navbar-brand" href = "BookDirectory.php"></a>
+            <a class = "navbar-brand" href = "Home.php"></a>
             <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class = "navbar-toggler-icon"></span>
             </button>
 
             <div class = "collapse navbar-collapse" id = "navbarNav">
-                <ul class = "navbar-nav">
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Home.php">Home</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a></li>
-                    <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
+                <ul class = "navbar-nav w-100 d-flex align-items-center">
+                    <li class = "nav-item">
+                        <a class = "nav-link fw-bold" href = "Home.php">Home</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a>
+                    </li>
+                    
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <li class = "nav-item ms-auto">
+                            <span class = "nav-link fw-bold">Hello, <?php echo htmlspecialchars($_SESSION['user']); ?></span>
+                        </li>
+                        <li class = "nav-item">
+                            <a class = "nav-link fw-bold" href = "Logout.php">Logout</a>
+                        </li>
+                    <?php else: ?>
+                        <li class = "nav-item"><a class = "nav-link fw-bold" href = "Login.php">Login</a></li>
+                    <?php endif; ?>        
                 </ul>
             </div>
         </div>
     </nav>
-
  
  <!-- Page content can go here needs a main class possibly -->
 

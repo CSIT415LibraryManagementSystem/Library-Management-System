@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sss", $username, $email, $password);
 
         if ($stmt->execute()) {
-            echo "Registration successful. <a href='login.php'>Login Here</a>";
+            $success = "Registration successful. <a href='login.php'>Login Here</a>";
         } else {
-            echo "Error: " . $stmt->error;
+            $error = "Error: " . $stmt->error;
         }
 
         $stmt->close();
