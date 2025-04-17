@@ -56,6 +56,14 @@
                     <li class = "nav-item">
                         <a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a>
                     </li>
+
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <li class = "nav-item">
+                            <a class = "nav-link fw-bold" href = "BookBorrowed.php">Books Checked Out</a>
+                        </li>
+                    <?php else: ?>
+                        <!-- Empty if not logged in -->
+                    <?php endif; ?>  
                     
                     <?php if (isset($_SESSION['user'])): ?>
                         <li class = "nav-item ms-auto">
@@ -104,7 +112,7 @@
                             <p class = "card-text"><strong>Genre:</strong> <?= htmlspecialchars($row['genre']); ?></p>
                             <p class = "card-text"><strong>Published:</strong> <?= $row['published']; ?></p>
                             <!-- Btn for future Dynamically loaded Book detail pages... -->
-                            <a href="BookDetails.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">View Book Details</a>
+                            <a href="BookDetails.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm btn-red">View Book Details</a>
                         </div>
                     </div>
                 </div>

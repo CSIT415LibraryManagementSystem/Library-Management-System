@@ -88,8 +88,18 @@ if (!$book)
                 <p><strong>Genre:</strong> <?= htmlspecialchars($book['genre']); ?></p>
                 <p><strong>Published:</strong> <?= htmlspecialchars($book['published']); ?></p>
                 <p><strong>Synopsis:</strong> <?= htmlspecialchars($book['Synopsis']); ?></p>
-                <!-- ADD A BTN HERE THAT ALLOWS CHECKOUT FOR USER -->
-                <a href = "BookDirectory.php" class = "btn btn-secondary mt-3">Return to Directory</a>
+
+                <!-- php code to insert bookID and userID to Checkout.php -> Into the Checkout table in the lmsDB -->
+                <?php if (isset($_SESSION['user'])): ?>
+                <form method="POST" action="Checkout.php">
+                    <input type="hidden" name="book_id" value="<?= $book['id']; ?>">
+                    <button type="submit" class="btn btn-primary btn-red mt-3">Checkout This Book</button>
+                </form>
+                <?php else: ?>
+                    <p class="mt-3 text-danger">Please <a href="Login.php">login</a> to check out this book.</p>
+                <?php endif; ?>
+
+                <a href = "BookDirectory.php" class = "btn btn-secondary btn-red mt-3">Return to Directory</a>
 
             </div>
         </div>

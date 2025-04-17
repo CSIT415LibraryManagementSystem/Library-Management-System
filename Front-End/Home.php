@@ -5,7 +5,64 @@
 <?php
     session_start();
     include '../Core/db_connect.php'; // Connects to BookDB
-?> 
+
+    //Init Vars
+    $borrowedCount = 0;
+    $dueSoonCount = 0;
+    $hasOverdue = false;
+    
+    if (isset($_SESSION['user'])) 
+    {
+        // Get the user's ID
+        $stmt = $conn->prepare("SELECT id FROM profiles WHERE username = ?");
+        $stmt->bind_param("s", $_SESSION['user']);
+        $stmt->execute();
+        $stmt->bind_result($user_id);
+        $stmt->fetch();
+        $stmt->close();
+    
+        if ($user_id) 
+        {
+            // Total books currently borrowed
+            $stmt = $conn->prepare("SELECT COUNT(*) FROM checkouts WHERE user_id = ? AND return_date IS NULL");
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $stmt->bind_result($borrowedCount);
+            $stmt->fetch();
+            $stmt->close();
+    
+            // Books due in the next 7 days
+            $stmt = $conn->prepare("
+                SELECT COUNT(*) 
+                FROM checkouts 
+                WHERE user_id = ? 
+                AND return_date IS NULL 
+                AND due_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)
+            ");
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $stmt->bind_result($dueSoonCount);
+            $stmt->fetch();
+            $stmt->close();
+    
+            // Check for overdue books
+            $stmt = $conn->prepare("
+                SELECT COUNT(*) 
+                FROM checkouts 
+                WHERE user_id = ? 
+                AND return_date IS NULL 
+                AND due_date < CURDATE()
+            ");
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $stmt->bind_result($overdueCount);
+            $stmt->fetch();
+            $stmt->close();
+    
+            $hasOverdue = $overdueCount > 0;
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang = "en">
@@ -36,6 +93,14 @@
                     <li class = "nav-item">
                         <a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a>
                     </li>
+
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <li class = "nav-item">
+                            <a class = "nav-link fw-bold" href = "BookBorrowed.php">Books Checked Out</a>
+                        </li>
+                    <?php else: ?>
+                        <!-- Empty if not logged in -->
+                    <?php endif; ?>  
                     
                     <?php if (isset($_SESSION['user'])): ?>
                         <li class = "nav-item ms-auto">
@@ -127,7 +192,8 @@
                     <div class = "card bg-light mb-3">
                         <div class = "card-body text-center">
                             <h5 class = "card-title">Books Borrowed</h5>
-                            <p class = "card-text"><strong>0</strong> books currently borrowed.</p>
+                            <p class = "card-text"><strong><?= $borrowedCount ?></strong> book<?= $borrowedCount !== 1 ? 's' : '' ?> currently borrowed.</p>
+                            <a href="BookBorrowed.php" class="btn btn-primary btn-sm mt-2">View Borrowed Books</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +203,7 @@
                     <div class = "card bg-light mb-3">
                         <div class = "card-body text-center">
                             <h5 class = "card-title">Books Due Soon</h5>
-                            <p class = "card-text"><strong>0</strong> books due within the next week.</p>
+                            <p class = "card-text"><strong><?= $dueSoonCount ?></strong> book<?= $dueSoonCount !== 1 ? 's' : '' ?> due within the next week.</p>
                         </div>
                     </div>
                 </div>
@@ -147,7 +213,11 @@
                     <div class = "card bg-light mb-3">
                         <div class = "card-body text-center">
                             <h5 class = "card-title">Account Status</h5>
-                            <p class = "card-text">No overdue books. You're all set! ✅</p>
+                            <?php if ($hasOverdue): ?>
+                                <p class="card-text text-danger">⚠️ You have overdue books!</p>
+                            <?php else: ?>
+                                <p class="card-text text-success">No overdue books. You're all set! ✅</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

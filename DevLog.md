@@ -92,4 +92,19 @@
       - Make a Checkout Table that is associated with a user through a PK to FK
       - Make a return button or have books auto return when they are overdue (Simulate returns?)
       - That should be about everything we have to do in total! 
-      
+
+### 04.16.2025 - 10:52 pm - Kyler #2
+- I built the `BookBorrowed.php` page which shows all currently checked-out books for the logged-in user. It uses a SQL join between `checkouts` and `books` and filters by `return_date IS NULL`. The UI mimics the grid layout used on the BookDetails page with a responsive Bootstrap card grid.
+- I created a `Return.php` script that updates the `return_date` for a specific checkout ID (instead of deleting it), and redirects the user back to BookBorrowed.php with a success or failure alert.
+- I added a "Return Book" button to each card in BookBorrowed.php. The button is wrapped in a `<form>` that posts the `checkout_id`.
+- On BookBorrowed.php, I added Bootstrap alerts to confirm whether the return succeeded or failed (green success or red failure banner above the grid).
+- I updated the Home.php dashboard logic:
+      - `borrowedCount`: now only counts books where `return_date IS NULL`
+      - `dueSoonCount`: only includes active loans due within 7 days
+      - `hasOverdue`: only flags books with `return_date IS NULL AND due_date < CURDATE()`
+      - These values now accurately reflect the user’s current checkout status.
+- I added a navbar link and dashboard card button to take the user to their BookBorrowed.php page.
+- I also added **30 new books to the database** (IDs 21–50) using an `INSERT INTO books` SQL statement. I updated genres, fixed incorrect publication years, ensured image paths were correct, and chatgbt'd synopsis for each one.
+- All data was checked and cleaned, so these are ready to use in any UI displays like carousels, staff picks, or search listings.
+- Everything tested successfully. The return system now works end-to-end, and user dashboard values are synced in real time.
+
