@@ -80,8 +80,8 @@
     <nav class = "navbar navbar-expand-lg navbar-red" > 
         <div class = "container-fluid">
             <a class = "navbar-brand" href = "Home.php"></a>
-            <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarNav"
+                aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
                 <span class = "navbar-toggler-icon"></span>
             </button>
 
@@ -119,15 +119,15 @@
 
  <!-- Page content starts here -->
 
-    <div class="image-container"> <!-- MSU Logo -->
-        <img src="../Resources/MSULogoLongTransparent.jpg" alt="MSU Logo" class="MSU-image">
+    <div class = "image-container"> <!-- MSU Logo -->
+        <img src = "../Resources/MSULogoLongTransparent.jpg" alt = "MSU Logo" class = "MSU-image">
     </div>
 
     <!-- Library Welcome Section-->
-    <div class="container mt-4 welcome-bubble">
-        <div class="text-center">
-            <h2>📖 Welcome to Montclair Library!</h2>
-            <p class="lead">
+    <div class = "container mt-4 welcome-bubble">
+        <div class = "text-center">
+            <h2>Welcome to Montclair Library!</h2>
+            <p class = "lead">
                 Explore a vast collection of books, research materials, and digital resources. 
                 Borrow books, track your reading history, and discover staff recommendations.
             </p>
@@ -193,7 +193,7 @@
                         <div class = "card-body text-center">
                             <h5 class = "card-title">Books Borrowed</h5>
                             <p class = "card-text"><strong><?= $borrowedCount ?></strong> book<?= $borrowedCount !== 1 ? 's' : '' ?> currently borrowed.</p>
-                            <a href="BookBorrowed.php" class="btn btn-primary btn-sm mt-2">View Borrowed Books</a>
+                            <a href = "BookBorrowed.php" class = "btn btn-primary btn-sm mt-2">View Borrowed Books</a>
                         </div>
                     </div>
                 </div>
@@ -214,9 +214,9 @@
                         <div class = "card-body text-center">
                             <h5 class = "card-title">Account Status</h5>
                             <?php if ($hasOverdue): ?>
-                                <p class="card-text text-danger">⚠️ You have overdue books!</p>
+                                <p class = "card-text text-danger"> You have overdue books!</p>
                             <?php else: ?>
-                                <p class="card-text text-success">No overdue books. You're all set! ✅</p>
+                                <p class = "card-text text-success">No overdue books. You're all set! </p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -235,14 +235,14 @@
 
 
     <!-- Footer -->
-    <footer class="text-white text-center py-3 footer-red">
+    <footer class = "text-white text-center py-3 footer-red">
         <p>&copy; 2025 Montclair State University. All Rights Reserved.</p>
     </footer>
 
 
 
 <!-- Bootstrap JavaScript Bundle (Required for Carousel) -->
-<script src="../Back-End/bootstrap_js/bootstrap.bundle.min.js"></script>
+<script src = "../Back-End/bootstrap_js/bootstrap.bundle.min.js"></script>
 
 
 </body>

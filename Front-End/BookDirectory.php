@@ -44,7 +44,7 @@
         <div class = "container-fluid">
             <a class = "navbar-brand" href = "Home.php"></a>
             <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
                 <span class = "navbar-toggler-icon"></span>
             </button>
 
@@ -97,7 +97,7 @@
 
     <!-- Book Directory Layout -->
     <div class = "container mt-4">
-        <h2 class = "text-center">📚 Book Directory</h2>
+        <h2 class = "text-center">Book Directory</h2>
         <div class = "row">
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class = "col-md-4 mb-4">
@@ -112,7 +112,7 @@
                             <p class = "card-text"><strong>Genre:</strong> <?= htmlspecialchars($row['genre']); ?></p>
                             <p class = "card-text"><strong>Published:</strong> <?= $row['published']; ?></p>
                             <!-- Btn for future Dynamically loaded Book detail pages... -->
-                            <a href="BookDetails.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm btn-red">View Book Details</a>
+                            <a href = "BookDetails.php?id=<?= $row['id']; ?>" class = "btn btn-primary btn-sm btn-red">View Book Details</a>
                         </div>
                     </div>
                 </div>
@@ -122,13 +122,13 @@
     
 
     <!-- Footer -->
-    <footer class="text-white text-center py-3 footer-red">
+    <footer class = "text-white text-center py-3 footer-red">
         <p>&copy; 2025 Montclair State University. All Rights Reserved.</p>
     </footer>
 
 
 <!-- Bootstrap Bundle with Popper (for interactive components) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

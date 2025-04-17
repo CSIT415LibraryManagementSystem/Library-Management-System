@@ -62,7 +62,7 @@
         <div class = "container-fluid">
             <a class = "navbar-brand" href = "Home.php"></a>
             <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
                 <span class = "navbar-toggler-icon"></span>
             </button>
 
@@ -119,7 +119,7 @@
                                 
                                 <!-- Return Book Btn -->
                                 <form method = "POST" action = "Return.php" onsubmit = "return confirm('Confirm return?');">
-                                    <input type = "hidden" name = "checkout_id" value="<?= $book['checkout_id']; ?>">
+                                    <input type = "hidden" name = "checkout_id" value = "<?= $book['checkout_id']; ?>">
                                     <button type = "submit" class = "btn btn-danger btn-red">Return Book</button>
                                 </form>
 
