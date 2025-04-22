@@ -104,7 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class = "mb-4"> <!-- --> 
                 <label class = "form-label">Password</label>
-                <input type = "text" name = "password" class = "form-control" placeholder = "Password123" required>
+                <div class="input-group">
+                  <input type = "password" name = "password" class = "form-control" placeholder = "Password123" required>
+                  <button type="button" class="btn btn-outline-secondary" onmousedown="showPassword()" onmouseup="hidePassword()" onmouseleave="hidePassword()">Show
+                  </button> </div>
             </div>
             
             <button type = "submit" class = "btn btn-primary w-100 btn-red">Register</button>
@@ -121,4 +124,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Bootstrap Bundle with Popper (for interactive components) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>
+
+<!-- JavaScript to toggle password visibility -->
+<script>
+    function showPassword() {
+        var passwordField = document.getElementById("password");
+        passwordField.type = "text";
+    }
+
+    function hidePassword() {
+        var passwordField = document.getElementById("password");
+        passwordField.type = "password";
+    }
+</script>
+</body>
 </html>
