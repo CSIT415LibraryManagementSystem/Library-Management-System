@@ -108,3 +108,7 @@
 - All data was checked and cleaned, so these are ready to use in any UI displays like carousels, staff picks, or search listings.
 - Everything tested successfully. The return system now works end-to-end, and user dashboard values are synced in real time.
 
+### 04.23.2025 - 12:57 PM - Kyler
+- Added an Admin Dashboard with proper verification of level of User Priv, It has 6 admin tools. This is the final implement for the project only thing that may be done now will be addition of books as well as polish of general use of project.
+
+

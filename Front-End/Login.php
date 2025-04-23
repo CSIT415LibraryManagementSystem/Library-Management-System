@@ -22,9 +22,22 @@
         {
             if (password_verify($password, $row['password'])) 
             {
+                $_SESSION['user_id'] = $row['id'];
                 $_SESSION['user'] = $row['username'];
-                header("Location: Home.php");
-                exit();
+                $_SESSION['account_type'] = $row['account_type'];
+                $account_type = $row['account_type'];
+
+                if ($account_type === 'Librarian') 
+                {
+                    $_SESSION['account_type'] = 'Librarian';
+                    header("Location: adminDashboard.php");
+                    exit();
+                } else 
+                {
+                    $_SESSION['account_type'] = 'Member';
+                    header("Location: Home.php");
+                    exit();
+                }
             } else 
             {
                 $error = "Invalid password.";

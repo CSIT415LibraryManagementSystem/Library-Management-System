@@ -11,7 +11,7 @@
   color: #ffffff;
 }
 
-.navbar-nav .nav-link /* Text style for the navbar links (buttons text) to be white and bright -> Matches footer */
+.nav-link /* Text style for the navbar links (buttons text) to be white and bright -> Matches footer */
 {
   color: #ffffff; 
   opacity: 1;  
@@ -22,6 +22,13 @@
   color:black !important;
   font-weight: bolder !important;
   transition: 0.3s;
+}
+
+.admin-link 
+{
+  color: #2735ba; 
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .footer-red /* Styling for the footer to match the nav. */
@@ -72,6 +79,17 @@
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+.btn-gray
+{
+  background-color: #343434;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 .image-container 
 {
   display: flex;
@@ -110,6 +128,87 @@
   .search-input {
     width: 90%;
   }
+}
+
+/* ----------- Admin Dashboard CSS ------------ */
+
+.card-montclair
+{
+  background-color: #4e4b4b;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+
+.card-montclair .card-header 
+{
+  background-color: #990000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 1rem;
+}
+
+.btn-redDashb
+{
+  background-color: #990000;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  transition: 0.3s ease;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.btn-redDashb:hover 
+{
+  background-color: #2735ba;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Admin-Block Section for Block 1 and 2 alternating */
+
+.admin-block 
+{
+  width: 100%;
+  background-color: #990000;
+  color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 0px; /* flat edges */
+}
+
+.admin-block-alt
+{
+  width: 100%;
+  background-color: #343434;
+  color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 0px; /* flat edges */
+}
+
+.admin-block h4 
+{
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.admin-block p 
+{
+  text-align: center;
+  margin-left: 1rem;
 }
 
 /*------------------- Persistent For All Pages Styling ------------------- */

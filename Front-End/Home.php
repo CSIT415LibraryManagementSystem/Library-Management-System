@@ -10,6 +10,7 @@
     $borrowedCount = 0;
     $dueSoonCount = 0;
     $hasOverdue = false;
+    $AccountType = 'Member'; // Default AccountType = Member
     
     if (isset($_SESSION['user'])) 
     {
@@ -20,7 +21,17 @@
         $stmt->bind_result($user_id);
         $stmt->fetch();
         $stmt->close();
-    
+
+        // Get the user's Account Type
+        $stmt = $conn->prepare("SELECT account_type FROM profiles WHERE username = ?");
+        $stmt->bind_param("s", $_SESSION['user']);
+        $stmt->execute();
+        $stmt->bind_result($AccountType);
+        $stmt->fetch();
+        $stmt->close();
+
+        $_SESSION['account_type'] = $AccountType; // Store the fetched User account_type in $AccountType
+
         if ($user_id) 
         {
             // Total books currently borrowed
@@ -69,7 +80,7 @@
 
 <head>
     <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <title>Montclair Library System - Home</title>
     <link href = "../css/bootstrap_css/bootstrap.min.css" rel = "stylesheet"> <!-- Bootstrap -> Loaded Locally (Was having blocking issues)-->
     <link rel = "stylesheet" href = "../css/style.css"> <!-- custom Css link -->
@@ -94,6 +105,12 @@
                         <a class = "nav-link fw-bold" href = "BookDirectory.php">Book Directory</a>
                     </li>
 
+                    <?php if (isset($_SESSION['user']) && $AccountType === 'Librarian'): ?>
+                        <li class = "nav-item">
+                            <a class = "fw-bold admin-link" href = "AdminDashboard.php">Librarian Dashboard</a>
+                        </li>
+                     <?php endif; ?>
+
                     <?php if (isset($_SESSION['user'])): ?>
                         <li class = "nav-item">
                             <a class = "nav-link fw-bold" href = "BookBorrowed.php">Books Checked Out</a>
@@ -117,7 +134,7 @@
         </div>
     </nav>
 
- <!-- Page content starts here -->
+    <!-- Page content starts here -->
 
     <div class = "image-container"> <!-- MSU Logo -->
         <img src = "../Resources/MSULogoLongTransparent.jpg" alt = "MSU Logo" class = "MSU-image">
@@ -233,13 +250,10 @@
         </a>
     </div>
 
-
     <!-- Footer -->
     <footer class = "text-white text-center py-3 footer-red">
         <p>&copy; 2025 Montclair State University. All Rights Reserved.</p>
     </footer>
-
-
 
 <!-- Bootstrap JavaScript Bundle (Required for Carousel) -->
 <script src = "../Back-End/bootstrap_js/bootstrap.bundle.min.js"></script>

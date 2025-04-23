@@ -7,7 +7,8 @@ include "../Core/db_connect.php";
 $error = "";
 $success = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Secure hashing
@@ -20,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($check->num_rows > 0) 
     {
-        echo "This email is already registered. <a href='login.php'>Login instead</a>";
+        echo "This email is already registered. <a href = 'login.php'>Login instead</a>";
         $check->close();
     } else 
     {
@@ -31,8 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare($sql); 
         $stmt->bind_param("sss", $username, $email, $password);
 
-        if ($stmt->execute()) {
-            $success = "Registration successful. <a href='login.php'>Login Here</a>";
+        if ($stmt->execute()) 
+        {
+            $success = "Registration successful. <a href = 'login.php'>Login Here</a>";
         } else {
             $error = "Error: " . $stmt->error;
         }
