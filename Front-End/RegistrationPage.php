@@ -5,6 +5,7 @@
 include "../Core/db_connect.php";
 
 $error = "";
+$error2 = "";
 $success = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -21,8 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     if ($check->num_rows > 0) 
     {
-        echo "This email is already registered. <a href = 'login.php'>Login instead</a>";
+        $error2 = "This email is already registered. <a href = 'login.php'>Login instead</a>";
         $check->close();
+
     } else 
     {
         $check->close();
@@ -85,6 +87,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <div class = "container my-5">
         <h2 class = "text-center mb-4">Register</h2>
 
+        
+        <?php if ($error2): ?>
+            <div class = "alert alert-danger text-center"><?php echo $error2; ?></div>
+        <?php endif; ?>
+
         <?php if ($error): ?>
             <div class = "alert alert-danger text-center"><?php echo $error; ?></div>
         <?php endif; ?>
@@ -108,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <label class = "form-label">Password</label>
                 <div class="input-group">
                   <input type = "password" name = "password" class = "form-control" placeholder = "Password123" required>
-                  <button type="button" class="btn btn-outline-secondary" onmousedown="showPassword()" onmouseup="hidePassword()" onmouseleave="hidePassword()">Show
+                  <button type = "button" class = "btn btn-outline-secondary" onmousedown = "showPassword()" onmouseup = "hidePassword()" onmouseleave = "hidePassword()">Show
                   </button> </div>
             </div>
             
